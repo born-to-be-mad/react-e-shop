@@ -8,7 +8,7 @@ import SignInSignUpPage from "./pages/sign-in-sign-up/sign-in-sign-up-page.compo
 import HomePage from "./pages/home/home-page.component";
 import ShopPage from "./pages/shop/shop-page.component";
 
-import { auth } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends React.Component {
   constructor() {
@@ -21,11 +21,28 @@ class App extends React.Component {
 
   componentDidMount() {
     //sunscribe and save the subscrioption to the variable
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({ currentUser: user });
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        console.log(
+          userAuth.displayName + "(" + userAuth.email + ") is logged-in"
+        );
+        console.dir(userAuth);
 
-      console.log(user.displayName + "(" + user.email + ") is logged-in");
-      console.dir(user);
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot(userSnapShot => {
+          this.setState({
+            currentUser: {
+              id: userSnapShot.id,
+              ...userSnapShot.data() //firebase snapshot data
+            }
+          });
+
+          console.log(this.state);
+        });
+      }
+
+      this.setState({ currentUser: userAuth });
     });
   }
 
