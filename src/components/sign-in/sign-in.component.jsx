@@ -28,7 +28,7 @@ class SignIn extends React.Component {
   };
 
   handleChange = event => {
-    //hanndles both fielsd(email and password)
+    //handles both fielsd(email and password)
     const { value, name } = event.target;
     this.setState({ [name]: value });
   };
@@ -36,7 +36,7 @@ class SignIn extends React.Component {
   render() {
     return (
       <div className="sign-in">
-        <h2>I already have an account</h2>
+        <h2 className="title">I already have an account</h2>
         <span>Sign-in with e-mail and password</span>
         <form onSubmit={this.handleSubmit}>
           <FormInput
