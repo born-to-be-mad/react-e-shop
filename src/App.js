@@ -26,22 +26,17 @@ class App extends React.Component {
         console.log(
           userAuth.displayName + "(" + userAuth.email + ") is logged-in"
         );
-        console.dir(userAuth);
+        //console.dir(userAuth);
 
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot(userSnapShot => {
-          this.setState(
-            {
-              currentUser: {
-                id: userSnapShot.id,
-                ...userSnapShot.data() //firebase snapshot data
-              }
-            },
-            () => {
-              console.log(this.state);
+          this.setState({
+            currentUser: {
+              id: userSnapShot.id,
+              ...userSnapShot.data() //firebase snapshot data
             }
-          );
+          });
         });
       }
 
