@@ -31,14 +31,17 @@ class App extends React.Component {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot(userSnapShot => {
-          this.setState({
-            currentUser: {
-              id: userSnapShot.id,
-              ...userSnapShot.data() //firebase snapshot data
+          this.setState(
+            {
+              currentUser: {
+                id: userSnapShot.id,
+                ...userSnapShot.data() //firebase snapshot data
+              }
+            },
+            () => {
+              console.log(this.state);
             }
-          });
-
-          console.log(this.state);
+          );
         });
       }
 
