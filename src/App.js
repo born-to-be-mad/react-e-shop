@@ -23,20 +23,26 @@ class App extends React.Component {
     //sunscribe and save the subscrioption to the variable
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
-        console.log(
-          userAuth.displayName + "(" + userAuth.email + ") is logged-in"
-        );
-        //console.dir(userAuth);
-
         const userRef = await createUserProfileDocument(userAuth);
-
+        console.dir(userRef);
         userRef.onSnapshot(userSnapShot => {
-          this.setState({
-            currentUser: {
-              id: userSnapShot.id,
-              ...userSnapShot.data() //firebase snapshot data
+          this.setState(
+            {
+              currentUser: {
+                id: userSnapShot.id,
+                ...userSnapShot.data() //firebase snapshot data
+              }
+            },
+            () => {
+              const { currentUser } = this.state;
+              console.log(
+                currentUser.displayName +
+                  "(" +
+                  currentUser.email +
+                  ") is logged-in"
+              );
             }
-          });
+          );
         });
       }
 
