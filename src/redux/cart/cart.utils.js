@@ -8,5 +8,5 @@ export const addItemToCart = (items, itemToAdd) => {
     );
   }
 
-  return [...items, { ...itemToAdd, quantity: 0 }];
+  return [...items, { ...itemToAdd, quantity: 1 }];
 };
