@@ -1,6 +1,6 @@
 import { CartActionTypes } from "./cart.types";
 
-export const toggleCartVisibility = user => ({
+export const toggleCartVisibility = () => ({
   type: CartActionTypes.TOGGLE_CART
 });
 
