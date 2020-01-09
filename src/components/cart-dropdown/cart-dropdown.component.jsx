@@ -1,15 +1,16 @@
 import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import { withRouter } from "react-router-dom";
 
 import CustomButton from "../custom-button/custom-button.component";
 import CartItem from "../cart-item/cart-item.component";
-
 import { selectCartItems } from "../../redux/cart/cart.selectors";
+import { toggleCartVisibility } from "../../redux/cart/cart-actions";
 
 import "./cart-dropdown.styles.scss";
 
-const CartDropdown = ({ cartItems }) => {
+const CartDropdown = ({ cartItems, history, dispatch }) => {
   return (
     <div className="cart-dropdown">
       <div className="cart-items">
@@ -18,10 +19,17 @@ const CartDropdown = ({ cartItems }) => {
             <CartItem key={cartItem.id} item={cartItem} />
           ))
         ) : (
-          <span>Your cart is empty</span>
+          <span className="empty-message">Your cart is empty</span>
         )}
       </div>
-      <CustomButton>Check-out</CustomButton>
+      <CustomButton
+        onClick={() => {
+          history.push("/checkout");
+          dispatch(toggleCartVisibility());
+        }}
+      >
+        Check-out
+      </CustomButton>
     </div>
   );
 };
@@ -30,4 +38,5 @@ const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems
 });
 
-export default connect(mapStateToProps)(CartDropdown);
+//order of wrapping is matters!!!!
+export default withRouter(connect(mapStateToProps)(CartDropdown));
