@@ -7,8 +7,14 @@ export const selectCollections = createSelector(
   shop => shop.collections
 );
 
+export const selectCollectionsForPreview = createSelector(
+  [selectCollections],
+  collections => Object.keys(collections).msp(key => collections[key])
+);
+
 export const selectCollection = collectionURLParam =>
   createSelector(
     [selectCollections],
+
     collections => collections[collectionURLParam]
   );
