@@ -66,3 +66,94 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+# Usefull links
+
+https://code.visualstudio.com/ - Free. Built on open source. Runs everywhere.
+
+https://github.com/nvm-sh/nvm#installation-and-update - Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions
+
+https://nodejs.org/en/ - a JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+https://yarnpkg.com/lang/en/ - FAST, RELIABLE, AND SECURE DEPENDENCY MANAGEMENT.
+
+https://stripe.com/ - The new standard in online payments.
+
+_Firebase_. App success made simple. Build apps fast, without managing infrastructure:
+
+- https://firebase.google.com/
+- https://www.npmjs.com/package/firebase
+- https://firebase.google.com/docs/reference/js/
+
+https://create-react-app.dev/docs/getting-started/
+
+https://gridbyexample.com/what/
+
+_ES 6_
+
+- ES6 Object destructuring: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Object_destructuring
+
+- ES6 template literals(template strings): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+
+_CSS_:
+
+- CSS timing function: https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function
+
+- CSS Border box:https://www.w3schools.com/cssref/css3_pr_box-sizing.asp
+
+\_JavaScript:
+
+- Event.preventDefault: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
+
+- Window.localStorage: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+
+- Window.sessionStorage: https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
+
+_GitHub_:
+
+- GitHub HTTPS vs SSH: https://help.github.com/en/github/using-git/which-remote-url-should-i-use
+
+- Adding SSH key to Github: https://help.github.com/en/enterprise/2.15/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+React Developer Tools: https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en
+
+_ReactJS_:
+
+- Event Binding in React: https://reactjs.org/docs/handling-events.html
+
+- React Synthetic Events: https://reactjs.org/docs/events.html
+
+- React Component setSate: https://reactjs.org/docs/react-component.html#setstate
+
+React lifecycle diagram: http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+Github react lifecycles: https://github.com/ZhangMYihua/lifecycles-lesson
+
+Redux: https://www.npmjs.com/package/redux
+
+React Redux: https://www.npmjs.com/package/react-redux
+
+React Redux - connect: https://react-redux.js.org/api/connect
+
+Logger for Redux: https://www.npmjs.com/package/redux-logger
+
+Redux Persist: https://www.npmjs.com/package/redux-persist
+
+React Router - Redirect: https://reacttraining.com/react-router/web/api/Redirect
+
+Reselect: https://www.npmjs.com/package/reselect
+
+React Stripe Checkout Component:
+
+- https://github.com/azmenak/react-stripe-checkout
+- https://www.npmjs.com/package/react-stripe-checkout
+
+Heroku Buildpack for create-react-app: https://github.com/mars/create-react-app-buildpack
+
+Heroku:
+https://www.heroku.com/
+https://devcenter.heroku.com/articles/heroku-cli
+
+UTF-8 Dingbats: https://www.w3schools.com/charsets/ref_utf_dingbats.asp
+Google fonts: https://fonts.google.com/
+Node-sass: https://www.npmjs.com/package/node-sass
