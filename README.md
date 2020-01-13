@@ -148,11 +148,11 @@ React Stripe Checkout Component:
 - https://github.com/azmenak/react-stripe-checkout
 - https://www.npmjs.com/package/react-stripe-checkout
 
-Heroku Buildpack for create-react-app: https://github.com/mars/create-react-app-buildpack
-
-Heroku:
-https://www.heroku.com/
-https://devcenter.heroku.com/articles/heroku-cli
+_Heroku_:
+* https://www.heroku.com/
+* CLI for jeroku: https://devcenter.heroku.com/articles/heroku-cli
+* Heroku Buildpack for create-react-app: https://github.com/mars/create-react-app-buildpack
+* Linking Github to Heroku: https://devcenter.heroku.com/articles/github-integration
 
 UTF-8 Dingbats: https://www.w3schools.com/charsets/ref_utf_dingbats.asp
 Google fonts: https://fonts.google.com/
