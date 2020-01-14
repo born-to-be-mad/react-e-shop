@@ -101,7 +101,7 @@ _CSS_:
 
 - CSS Border box:https://www.w3schools.com/cssref/css3_pr_box-sizing.asp
 
-\_JavaScript:
+_JavaScript_:
 
 - Event.preventDefault: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
 
@@ -155,5 +155,10 @@ _Heroku_:
 * Linking Github to Heroku: https://devcenter.heroku.com/articles/github-integration
 
 UTF-8 Dingbats: https://www.w3schools.com/charsets/ref_utf_dingbats.asp
+
 Google fonts: https://fonts.google.com/
+
 Node-sass: https://www.npmjs.com/package/node-sass
+
+https://styled-components.com/ - visual primitives for the component age.
+Use the best bits of ES6 and CSS to style your apps without stress 

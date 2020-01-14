@@ -7,7 +7,7 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => {
   const SHOP_BUTTON = "SHOP NOW";
   return (
     <div
-      className={`${size} menu-item`}
+      className={`${size ? size + " " : ""}menu-item`}
       onClick={() => history.push(`${match.url}${linkUrl}`)}
     >
       <div
