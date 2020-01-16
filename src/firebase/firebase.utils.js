@@ -19,8 +19,16 @@ firebase.initializeApp(config);
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
+  //query document by using QueryReference object - returns DocumentReference
   const userRef = firestore.doc(`users/${userAuth.uid}`);
 
+  //query collections by using QueryReference object - returns CollectionReference
+  const collectionRef = firestore.collections("/users");
+  const collectionSnapshot = await collectionRef.get();
+  console.log("User collection has size:" + collectionSnapshot.size);
+  console.log({ collection: collectionSnapshot.docs().map(doc => doc.data()) });
+
+  //retrieve the snapshotObject by using .get() on DocumentReference
   const userSnapShot = await userRef.get();
 
   if (!userSnapShot.exists) {
@@ -28,6 +36,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     const createdAt = new Date();
 
     try {
+      //create
       await userRef.set({
         displayName,
         email,
@@ -40,6 +49,23 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   }
 
   return userRef;
+};
+
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd
+) => {
+  const collectionRef = firestore.collection(collectionKey);
+  console.log("Collection reference:" + collectionRef);
+  const batch = firestore.batch();
+  objectsToAdd.forEach(obj => {
+    const newDocRef = collectionRef.doc();
+    console.log(newDocRef);
+    batch.set(newDocRef, obj);
+  });
+
+  //fire batch call with all INSERTs
+  return await batch.commit(); //Promise
 };
 
 export const auth = firebase.auth();

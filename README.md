@@ -79,11 +79,12 @@ https://yarnpkg.com/lang/en/ - FAST, RELIABLE, AND SECURE DEPENDENCY MANAGEMENT.
 
 https://stripe.com/ - The new standard in online payments.
 
-_Firebase_. App success made simple. Build apps fast, without managing infrastructure:
+_Firebase_(a comprehensive app development platform) provides the tools and infrastructure you need to develop, grow, and earn money from your app. This package supports web (browser), mobile-web, and server (Node.js) clients.
 
 - https://firebase.google.com/
 - https://www.npmjs.com/package/firebase
-- https://firebase.google.com/docs/reference/js/
+- Firebase JavaScript SDK reference: https://firebase.google.com/docs/reference/js/
+- Transactions and batched writes: https://firebase.google.com/docs/firestore/manage-data/transactions
 
 https://create-react-app.dev/docs/getting-started/
 
@@ -149,10 +150,11 @@ React Stripe Checkout Component:
 - https://www.npmjs.com/package/react-stripe-checkout
 
 _Heroku_:
-* https://www.heroku.com/
-* CLI for jeroku: https://devcenter.heroku.com/articles/heroku-cli
-* Heroku Buildpack for create-react-app: https://github.com/mars/create-react-app-buildpack
-* Linking Github to Heroku: https://devcenter.heroku.com/articles/github-integration
+
+- https://www.heroku.com/
+- CLI for jeroku: https://devcenter.heroku.com/articles/heroku-cli
+- Heroku Buildpack for create-react-app: https://github.com/mars/create-react-app-buildpack
+- Linking Github to Heroku: https://devcenter.heroku.com/articles/github-integration
 
 UTF-8 Dingbats: https://www.w3schools.com/charsets/ref_utf_dingbats.asp
 
@@ -161,4 +163,4 @@ Google fonts: https://fonts.google.com/
 Node-sass: https://www.npmjs.com/package/node-sass
 
 https://styled-components.com/ - visual primitives for the component age.
-Use the best bits of ES6 and CSS to style your apps without stress 
+Use the best bits of ES6 and CSS to style your apps without stress
