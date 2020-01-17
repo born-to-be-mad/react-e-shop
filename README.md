@@ -101,7 +101,9 @@ _CSS_:
 - CSS timing function: https://developer.mozilla.org/en-US/docs/Web/CSS/timing-function
 
 - CSS Border box:https://www.w3schools.com/cssref/css3_pr_box-sizing.asp
-
+  
+- CSS Animation: https://www.w3schools.com/css/css3_animations.asp
+  
 _JavaScript_:
 
 - Event.preventDefault: https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault
