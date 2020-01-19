@@ -79,16 +79,17 @@ https://yarnpkg.com/lang/en/ - FAST, RELIABLE, AND SECURE DEPENDENCY MANAGEMENT.
 
 https://stripe.com/ - The new standard in online payments.
 
+https://create-react-app.dev/docs/getting-started/
+
+https://gridbyexample.com/what/
+
 _Firebase_(a comprehensive app development platform) provides the tools and infrastructure you need to develop, grow, and earn money from your app. This package supports web (browser), mobile-web, and server (Node.js) clients.
 
 - https://firebase.google.com/
 - https://www.npmjs.com/package/firebase
 - Firebase JavaScript SDK reference: https://firebase.google.com/docs/reference/js/
 - Transactions and batched writes: https://firebase.google.com/docs/firestore/manage-data/transactions
-
-https://create-react-app.dev/docs/getting-started/
-
-https://gridbyexample.com/what/
+- FireBase REST API: https://firebase.google.com/docs/firestore/use-rest-api#making_rest_calls
 
 _ES 6_
 
