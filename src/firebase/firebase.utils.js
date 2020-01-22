@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+import { googleSignInStart } from "../redux/user/user.actions";
 
 const config = {
   apiKey: "AIzaSyADN5bybMjKtyIPrVXKrNRi1fnn3yh1uGA",
@@ -19,15 +20,14 @@ firebase.initializeApp(config);
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
+  // ### DEBUG: fetch all users ###
+  //query collections by using QueryReference object - returns CollectionReference
+  const collectionRef = firestore.collection("users");
+  const collectionSnapshot = await collectionRef.get();
+  console.log("Amount of registered users:" + collectionSnapshot.size);
+
   //query document by using QueryReference object - returns DocumentReference
   const userRef = firestore.doc(`users/${userAuth.uid}`);
-
-  //query collections by using QueryReference object - returns CollectionReference
-  const collectionRef = firestore.collections("/users");
-  const collectionSnapshot = await collectionRef.get();
-  console.log("User collection has size:" + collectionSnapshot.size);
-  console.log({ collection: collectionSnapshot.docs().map(doc => doc.data()) });
-
   //retrieve the snapshotObject by using .get() on DocumentReference
   const userSnapShot = await userRef.get();
 
@@ -90,8 +90,9 @@ export const convertCollectionsSnapshotToMap = collections => {
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
-const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 googleAuthProvider.setCustomParameters({ prompt: "select_account" });
-export const signInWithGoogle = () => auth.signInWithPopup(googleAuthProvider);
+
+export const signInWithGoogle = () => auth.signInWithPopup(googleSignInStart);
 
 export default firebase;
