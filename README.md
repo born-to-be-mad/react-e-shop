@@ -113,6 +113,8 @@ _JavaScript_:
 
 - Window.sessionStorage: https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage
 
+- Generator functions - function*: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*
+
 _GitHub_:
 
 - GitHub HTTPS vs SSH: https://help.github.com/en/github/using-git/which-remote-url-should-i-use
@@ -129,6 +131,8 @@ _ReactJS_:
 
 - React Component setSate: https://reactjs.org/docs/react-component.html#setstate
 
+- React Hoooks: https://reactjs.org/docs/hooks-intro.html
+
 React lifecycle diagram: http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
 Github react lifecycles: https://github.com/ZhangMYihua/lifecycles-lesson
@@ -138,6 +142,8 @@ Redux: https://www.npmjs.com/package/redux
 React Redux: https://www.npmjs.com/package/react-redux
 
 React Redux - connect: https://react-redux.js.org/api/connect
+
+Redux-saga: https://redux-saga.js.org/
 
 Logger for Redux: https://www.npmjs.com/package/redux-logger
 
