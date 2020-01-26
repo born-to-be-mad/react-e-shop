@@ -131,7 +131,8 @@ _ReactJS_:
 
 - React Component setSate: https://reactjs.org/docs/react-component.html#setstate
 
-- React Hoooks: https://reactjs.org/docs/hooks-intro.html
+- React Hooks: https://reactjs.org/docs/hooks-intro.html
+- React Hooks - API: useReducer: https://reactjs.org/docs/hooks-reference.html#usereducer
 
 React lifecycle diagram: http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
