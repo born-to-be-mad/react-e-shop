@@ -1,0 +1,34 @@
+import React from "react";
+
+class ErrorBoundary extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      errorOccured: false
+    };
+  }
+
+  //this method is called during the “render” phase, so side-effects are not permitted.
+  //For those use cases, use componentDidCatch() instead.
+  static getDerivedStateFromError(error) {
+    //process the error
+    return { errorOccured: true };
+  }
+
+  componentDidCatch(error, info) {
+    //logging or sending information about the error
+
+    console.log(error);
+  }
+
+  render() {
+    if (this.state.errorOccured) {
+      return <div>Something went wrong </div>;
+    }
+    //if no error, we render the children normally
+    return this.props.children;
+  }
+}
+
+export default ErrorBoundary;
