@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { fetchCollectionsStart } from "../../redux/shop/shop.actions";
 
 import Spinner from "../../components/spinner/spinner.component";
+import ErrorBoundary from "../../components/error-boundary/error-boundary.component";
 
 import { ShopPageContainer } from "./shop-page.styles";
 
@@ -22,17 +23,19 @@ const ShopPage = ({ fetchCollectionsStart, match }) => {
 
   return (
     <ShopPageContainer>
-      <Suspense fallback={<Spinner />}>
-        <Route
-          exact
-          path={`${match.path}`}
-          component={CollectionsOverviewContainer}
-        />
-        <Route
-          path={`${match.path}/:collectionId`}
-          component={CollectionPageContainer}
-        />
-      </Suspense>
+      <ErrorBoundary>
+        <Suspense fallback={<Spinner />}>
+          <Route
+            exact
+            path={`${match.path}`}
+            component={CollectionsOverviewContainer}
+          />
+          <Route
+            path={`${match.path}/:collectionId`}
+            component={CollectionPageContainer}
+          />
+        </Suspense>
+      </ErrorBoundary>
     </ShopPageContainer>
   );
 };
