@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 //it's native module
 const path = require("path");
 
+//compression library for gzipping
+const compression = require("compression");
+
 //if development or testing, we additionally load "dotenv" library, which allows us to access ".env"
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
@@ -16,6 +19,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const port = process.env.PORT || 5000; // 5000 is a fallback port
 
+app.use(compression);
 //any requests will be processed via this middleware 'bodyParser' and converted to json
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
