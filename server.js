@@ -29,6 +29,9 @@ app.use(cors());
 
 //PRODUCTION specific configuration
 if (process.env.NODE_ENV === "production") {
+  // it doesn't require us to use https in development
+  app.use(enforce.HTTPS({ trustProtoHeader: true }));
+
   //we serve all our static files by pointing  to 'build' directory
   app.use(express.static(path.join(__dirname, "client/build")));
 
