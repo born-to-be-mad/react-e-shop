@@ -28,7 +28,7 @@ app.use(cors());
 //PRODUCTION specific configuration
 // it doesn't require us to use https/compression in development
 if (process.env.NODE_ENV === "production") {
-  app.use(compression);
+  app.use(compression());
   //heroku runs "reverse-proxy"(smth that allows to forward unencrypted http-trafic)
   app.use(enforce.HTTPS({ trustProtoHeader: true }));
   //we serve all our static files by pointing  to 'build' directory
