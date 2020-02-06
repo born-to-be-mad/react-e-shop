@@ -19,20 +19,18 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const app = express();
 const port = process.env.PORT || 5000; // 5000 is a fallback port
 
-app.use(compression);
 //any requests will be processed via this middleware 'bodyParser' and converted to json
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
 //use CORS(Cross Origin Request): we are able to properly make requests  to our backend server
 app.use(cors());
 
 //PRODUCTION specific configuration
+// it doesn't require us to use https/compression in development
 if (process.env.NODE_ENV === "production") {
-  // it doesn't require us to use https in development
+  app.use(compression);
   //heroku runs "reverse-proxy"(smth that allows to forward unencrypted http-trafic)
   app.use(enforce.HTTPS({ trustProtoHeader: true }));
-
   //we serve all our static files by pointing  to 'build' directory
   app.use(express.static(path.join(__dirname, "client/build")));
 
@@ -53,7 +51,7 @@ app.listen(port, error => {
 });
 
 // if it is requested servie-worker.js
-app.get("/service-worker.js", function(req, res) {
+app.get("/service-worker.js", (req, res) => {
   res.sendFile(path.resolve(__dirname, "..", "build", "service-worker.js"));
 });
 
