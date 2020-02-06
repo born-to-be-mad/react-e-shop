@@ -1,9 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-
 //it's native module
 const path = require("path");
+const enforce = require("express-sslify");
 
 //compression library for gzipping
 const compression = require("compression");
@@ -30,6 +30,7 @@ app.use(cors());
 //PRODUCTION specific configuration
 if (process.env.NODE_ENV === "production") {
   // it doesn't require us to use https in development
+  //heroku runs "reverse-proxy"(smth that allows to forward unencrypted http-trafic)
   app.use(enforce.HTTPS({ trustProtoHeader: true }));
 
   //we serve all our static files by pointing  to 'build' directory
@@ -49,6 +50,11 @@ app.listen(port, error => {
   }
   //if nothing is wrong
   console.log("Server running on port " + port);
+});
+
+// if it is requested servie-worker.js
+app.get("/service-worker.js", function(req, res) {
+  res.sendFile(path.resolve(__dirname, "..", "build", "service-worker.js"));
 });
 
 app.post("/payment", (req, res) => {
