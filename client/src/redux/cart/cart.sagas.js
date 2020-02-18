@@ -11,7 +11,7 @@ import { selectCartItems } from "./cart.selectors";
 import CartActionTypes from "./cart.types";
 
 export function* onUserSignIn() {
-  //yield takeLatest(UserActionTypes.SIGN_IN_SUCCESS, checkCartFromFirebase);
+  yield takeLatest(UserActionTypes.SIGN_IN_SUCCESS, checkCartFromFirebase);
 }
 
 export function* checkCartFromFirebase({ payload: user }) {
