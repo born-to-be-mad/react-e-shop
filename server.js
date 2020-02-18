@@ -5,7 +5,8 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const enforce = require("express-sslify");
 
-//compression library for gzipping
+//compression library for gzipping.
+//Gzip compressing can greatly decrease the size of the response body and hence increase the speed of a web app.
 const compression = require("compression");
 
 //if development or testing, we additionally load "dotenv" library, which allows us to access ".env"
