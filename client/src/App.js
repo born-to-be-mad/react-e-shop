@@ -13,10 +13,13 @@ import { selectCurrentUser } from "./redux/user/user.selectors";
 import { checkUserSession } from "./redux/user/user.actions";
 
 const HomePage = lazy(() => import("./pages/home/home-page.component"));
+
 const ShopPage = lazy(() => import("./pages/shop/shop-page.component"));
+
 const SignInSignUpPage = lazy(() =>
   import("./pages/sign-in-sign-up/sign-in-sign-up-page.component")
 );
+
 const CheckoutPage = lazy(() =>
   import("./pages/checkout/checkout-page.component")
 );
